@@ -2,6 +2,8 @@
 
 [English](README.md)
 
+[Demo](https://elysia-next-todo-app.vercel.app/)
+
 一个现代化的、类型安全的待办事项应用程序，展示了 Next.js 与 Elysia API 服务器的集成。在性能和开发者体验方面进行了优化。
 
 ## ✨ 特性
@@ -37,22 +39,44 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/yourusername/next-elysia-todo.git
+git clone https://github.com/yansircc/elysia-next-todo-app.git
 
 # 导航到项目目录
-cd next-elysia-todo
+cd elysia-next-todo-app
 
-# 安装依赖
+# 复制环境变量
+cp .env.example .env.local
+
+# 安装依赖 (使用 Bun - 推荐)
 bun install
 
-# 或使用 npm(替代方案)
+# 或使用 npm (替代方案)
 npm install
+```
 
+### 环境设置
+
+1. 复制 `.env.example` 到 `.env.local`:
+
+```bash
+cp .env.example .env.local
+```
+
+2. 在 `.env.local` 中配置你的环境变量:
+
+```env
+# Frontend URL for API calls
+NEXT_PUBLIC_FRONT_URL="http://localhost:3000"
+```
+
+### 开发
+
+```bash
 # 运行开发服务器
 bun dev
 
 # 构建应用程序
-bun run build:local
+bun run build
 
 # 启动生产服务器
 bun start
@@ -86,4 +110,6 @@ bun start
 
 ---
 
-⭐ 如果您觉得此模板有用，请考虑为其加星！
+⭐ 如果你觉得此模板有用，请考虑为其加星！
+
+注意：因为是演示性质的项目，所有的todo都存储在内存中，不会持久化存储，所以每次重启服务后，所有的todo都会被清空，本项目并不适合生产环境。

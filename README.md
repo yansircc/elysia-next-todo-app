@@ -2,6 +2,8 @@
 
 [中文](README.zh-CN.md)
 
+[Demo](https://elysia-next-todo-app.vercel.app/)
+
 A modern, type-safe Todo application showcasing the integration of Next.js with Elysia API server. Built with performance and developer experience in mind.
 
 ## ✨ Features
@@ -37,30 +39,52 @@ A modern, type-safe Todo application showcasing the integration of Next.js with 
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/next-elysia-todo.git
+git clone https://github.com/yansircc/elysia-next-todo-app.git
 
 # Navigate to the project directory
-cd next-elysia-todo
+cd elysia-next-todo-app
 
-# Install dependencies
+# Copy environment variables
+cp .env.example .env.local
+
+# Install dependencies (with Bun - recommended)
 bun install
 
-# Or with npm(Alternative)
+# Or with npm (alternative)
 npm install
+```
 
+### Environment Setup
+
+1. Copy `.env.example` to `.env.local`:
+
+```bash
+cp .env.example .env.local
+```
+
+2. Configure your environment variables in `.env.local`:
+
+```env
+# Frontend URL for API calls
+NEXT_PUBLIC_FRONT_URL="http://localhost:3000"
+```
+
+### Development
+
+```bash
 # Run the development server
 bun dev
 
 # Build the application
-bun run build:local
+bun run build
 
 # Start the production server
 bun start
 ```
 
-> **Note**: While npm is supported, we highly recommend using Bun as Elysia is deeply integrated with Bun's ecosystem.
+> **Important**: Make sure to set up your environment variables before starting the development server.
 
-## 🎯 Why This Template?
+## �� Why This Template?
 
 1. **Perfect Learning Resource**: See how Next.js and Elysia work together in a real-world application
 2. **Type Safety**: Experience end-to-end type safety with Eden integration
@@ -87,3 +111,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 ⭐ If you found this template helpful, please consider giving it a star!
+
+Note: Because this is a demo project, all todos are stored in memory and will be cleared on each restart, so it is not suitable for production environments.
